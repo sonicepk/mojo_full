@@ -85,7 +85,7 @@ sub latest {
     my @predicted_deaths   = @total_deaths;
     my @predicted_dates    = @dates;
 
-    my $csv = Mojo::CSV->new( in => '/home/ekenny/china_covid_rates.csv' );
+    my $csv = Mojo::CSV->new( in => '/opt/mojo_full/lib/MyIp/Controller/china_covid_rates.csv' );
     while ( my $row = $csv->row ) {
         if ( $row->[0] gt $today ) {
 
