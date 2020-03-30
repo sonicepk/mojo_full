@@ -1,1 +1,1 @@
-# mojo_full
+# mojo full app

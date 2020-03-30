@@ -1,0 +1,11 @@
+<!doctype html><html>
+    <head>
+        <title>privacy policy</title>
+    </head>
+    <body>There is none</body>
+	<div>
+  % my $now = localtime;
+  Time: <%= $now %>
+</div>
+</html>
+

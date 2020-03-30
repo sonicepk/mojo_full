@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head><title>sipcalc results</title></head>
+  <body>
+  %= text_area myresults => (cols => 80) => (rows => 20) => begin
+    %= $results
+    % end
+  </body>
+</html>
+
+
+
+

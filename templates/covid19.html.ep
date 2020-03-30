@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head><title>Ireland COVID19 Stats</title>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<div id="Div1"></div>
+<script>
+var trace1 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'New Cases in Ireland (WHO daily)',
+
+	x: [
+  % for my $i (@{$results}[0]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+	y: [
+	% for my $i (@{$results}[1]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+  }
+var trace2 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'New Deaths in Ireland (WHO daily)',
+
+	x: [
+  % for my $i (@{$results}[0]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+	y: [
+	% for my $i (@{$results}[2]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+  }
+var trace3 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'Total Cases in Ireland (WHO daily)',
+
+	x: [
+  % for my $i (@{$results}[0]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+	y: [
+	% for my $i (@{$results}[3]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+  }
+var trace4 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'Total Deaths in Ireland (WHO daily)',
+
+	x: [
+  % for my $i (@{$results}[0]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+	y: [
+	% for my $i (@{$results}[4]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+  }
+var layout = {
+  title: 'Ireland COVID19 Statistics - Linear scale',
+  autosize: true,
+  showlegend: true,
+  width: 1000,
+  height: 800,
+  margin: {
+    l: 100,
+    r: 100,
+    b: 100,
+    t: 100,
+    pad: 4
+  },
+  yaxis: {
+    autorange: true,
+    hoverformat: '.0f',
+    tickformat: 's',
+  },
+xaxis: {
+    range: ['2020-03-01', '2020-05-01'],
+    rangeselector: {buttons: [
+        {
+          count: 1,
+          label: '1m',
+          step: 'month',
+          stepmode: 'backward'
+        },
+        {
+          count: 6,
+          label: '6m',
+          step: 'month',
+          stepmode: 'backward'
+        },
+        {step: 'all'}
+      ]},
+    rangeslider: {range: ['2020-03-01', '2020-05-01']},
+    type: 'date'
+}
+};
+var data = [trace1,trace2, trace3, trace4];
+      Plotly.newPlot('Div1', data, layout);
+
+</script>
+
+<div id="Div1a"></div>
+<script>
+
+var trace5 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'Total Cases In Ireland extrapolated forward from today using Chinese daily growth rates after restrictions were implemented',
+
+	x: [
+  % for my $i (@{$results}[0]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+	y: [
+	% for my $i (@{$results}[5]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+  }
+var trace6 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'Total Deaths In Ireland extrapolated forward from today using Chinese daily growth rates after restrictions were implemented',
+
+	x: [
+  % for my $i (@{$results}[0]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+	y: [
+	% for my $i (@{$results}[6]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+  }
+var trace7 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'Uncontrolled Cases (from 15/3/2020) Double Every 3 Days',
+
+	x: [
+  % for my $i (@{$results}[0]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+	y: [
+	% for my $i (@{$results}[7]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+  }
+var trace8 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'Uncontrolled Deaths (from 15/3/2020) 2.9% of Cases',
+
+	x: [
+  % for my $i (@{$results}[0]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+	y: [
+	% for my $i (@{$results}[8]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+}
+var trace9 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'New Cases extrapolated forward from today using Chinese Growth rate after restrictions',
+
+	x: [
+  % for my $i (@{$results}[0]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+	y: [
+	% for my $i (@{$results}[9]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+  }
+var layout = {
+  title: 'Ireland COVID19 Extrapolated Statistics - Log scale',
+  autosize: true,
+  showlegend: true,
+  width: 1000,
+  height: 800,
+  margin: {
+    l: 100,
+    r: 100,
+    b: 100,
+    t: 100,
+    pad: 4
+  },
+  yaxis: {
+    type: 'log',
+    autorange: true,
+    hoverformat: '.0f',
+    tickformat: 's',
+  },
+xaxis: {
+    range: ['2020-03-01', '2020-05-01'],
+    rangeselector: {buttons: [
+        {
+          count: 1,
+          label: '1m',
+          step: 'month',
+          stepmode: 'backward'
+        },
+        {
+          count: 6,
+          label: '6m',
+          step: 'month',
+          stepmode: 'backward'
+        },
+        {step: 'all'}
+      ]},
+    rangeslider: {range: ['2020-03-01', '2020-05-01']},
+    type: 'date'
+}
+};
+var data = [trace5,trace6, trace7, trace8, trace9];
+      Plotly.newPlot('Div1a', data, layout);
+
+</script>
+
+
+
+
+
+<div id="Div2"></div>
+<script>
+var trace1 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'Percentage daily increase of new cases',
+
+	x: [
+  % for my $i (@{$results}[0]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+	y: [
+	% for my $i (@{$results}[11]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+  }
+var layout = {
+  title: 'Ireland COVID19 Daily New Cases Percentage increase in Total Cases',
+  autosize: true,
+  showlegend: true,
+  width: 1000,
+  height: 800,
+  margin: {
+    l: 100,
+    r: 100,
+    b: 100,
+    t: 100,
+    pad: 4
+  },
+  yaxis: {
+    tickformat: ',.0%',
+    autorange: true,
+  },
+xaxis: {
+    range: ['2020-03-01', '2020-05-01'],
+    rangeselector: {buttons: [
+        {
+          count: 1,
+          label: '1m',
+          step: 'month',
+          stepmode: 'backward'
+        },
+        {
+          count: 6,
+          label: '6m',
+          step: 'month',
+          stepmode: 'backward'
+        },
+        {step: 'all'}
+      ]},
+    rangeslider: {range: ['2020-03-01', '2020-05-01']},
+    type: 'date'
+}
+};
+var data = [trace1, ];
+      Plotly.newPlot('Div2', data, layout);
+
+</script>
+
+<div id="Div3"></div>
+<script>
+var trace2 = {
+    type: "scatter",
+    mode: "lines",
+    name: 'Daily Growth Factor',
+
+	x: [
+  % for my $i (@{$results}[0]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+	y: [
+	% for my $i (@{$results}[10]) {
+  %  	for my $j (@{$i}){
+				'<%= $j %>',
+	%		}
+  % }
+	],
+  }
+
+var layout = {
+  title: 'Ireland COVID19 Daily Growth factor, Daily New/Previous Day New, inflection when = 1. Expect 2 times from here',
+  autosize: true,
+  showlegend: true,
+  width: 1000,
+  height: 800,
+  margin: {
+    l: 100,
+    r: 100,
+    b: 100,
+    t: 100,
+    pad: 4
+  },
+  yaxis: {
+    autorange: true,
+  },
+xaxis: {
+    range: ['2020-03-01', '2020-05-01'],
+    rangeselector: {buttons: [
+        {
+          count: 1,
+          label: '1m',
+          step: 'month',
+          stepmode: 'backward'
+        },
+        {
+          count: 6,
+          label: '6m',
+          step: 'month',
+          stepmode: 'backward'
+        },
+        {step: 'all'}
+      ]},
+    rangeslider: {range: ['2020-03-01', '2020-05-01']},
+    type: 'date'
+}
+};
+var data = [trace2, ];
+      Plotly.newPlot('Div3', data, layout);
+
+</script>
+
